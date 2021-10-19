@@ -62,7 +62,10 @@ const App = () => {
     setState(prevState=> ({ ...prevState, largeImg: img, isModal: true }));
   };
 
-  const  onCloseModal = () => {
+  const  onCloseModal = (e) => {
+    if(e && e.target.className !== 'Overlay') {
+      return null
+    }
     setState(prevState=> ({...prevState,isModal: false}))
  }
 
